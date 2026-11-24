@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useMemo } from 'react'
 import NoteCard from './NoteCard.jsx'
 
 
@@ -45,10 +45,12 @@ function handleDelete(id) {
 }
 
 const [search, setSearch] = useState("")
- 
-const filteredNotes = notes.filter((note) =>
+
+const filteredNotes = useMemo(() => {
+  return notes.filter((note) =>
     note.title.toLowerCase().includes(search.toLowerCase())
   )
+}, [notes, search])
 
 const titleRef = useRef(null)
 
@@ -59,7 +61,6 @@ const titleRef = useRef(null)
   useEffect(() => {
     const id = setTimeout(() => {
       localStorage.setItem('draft', JSON.stringify(form))
-      console.log('draft saved:', form.title)
     }, 1000)
     return () => clearTimeout(id)
   }, [form])

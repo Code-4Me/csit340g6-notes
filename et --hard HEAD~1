@@ -1,0 +1,17 @@
+[33me2ef13a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m perf: memoize the shown notes
+[33m7986388[m feat: add a large text setting with context
+[33madb16bf[m feat: focus the title after adding a note
+[33mefe1d0e[m feat: save the draft after typing stops
+[33mddcd73a[m feat: load saved notes with lazy initialization
+[33m457a80d[m feat: save notes to localStorage
+[33m5d6a534[m chore: start lab 6
+[33m4a299a8[m feat: add show more to note cards
+[33md0a13d2[m feat: search notes by title
+[33maa323f1[m feat: show a message when there are no notes
+[33m7f79641[m feat: delete a note
+[33mc4bc658[m feat: add notes on submit
+[33m311aa3f[m feat: control the note form
+[33m3fc6b9d[m feat: render notes from state with map
+[33mee4c85d[m chore: replace YOUR NAME with Rey Uriel Y. Legaspi
+[33m0678a2e[m feat: add static notes layout
+[33m32d6f3c[m initial commit
