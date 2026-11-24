@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useMemo } from 'react'
+import { useState, useEffect, useRef, useMemo, useCallback } from 'react'
 import NoteCard from './NoteCard.jsx'
 
 
@@ -40,9 +40,9 @@ function handleSubmit(e) {
     titleRef.current.focus()
   }
 
-function handleDelete(id) {
+const handleDelete = useCallback((id) => {
   setNotes(notes.filter((note) => note.id !== id))
-}
+ }, [notes])
 
 const [search, setSearch] = useState("")
 
@@ -119,16 +119,11 @@ const titleRef = useRef(null)
               className="relative min-h-32 bg-white px-6 py-5 shadow-[0_2px_4px_0_rgba(0,0,0,0.2),0_25px_50px_0_rgba(0,0,0,0.1)]"
             >
               <NoteCard
+                id={note.id}
                 title={note.title}
                 body={note.body}
+                onDelete={handleDelete}
               />
-              <button
-                type="button"
-                className="absolute top-4 right-5 cursor-pointer text-[26px] leading-none text-[#949494] hover:text-[#c18585]"
-                onClick={() => handleDelete(note.id)}
-              >
-                ×
-              </button>
             </li>
           ))}
         </ul>
